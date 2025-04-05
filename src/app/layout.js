@@ -1,4 +1,4 @@
-import { ThemeProvider as NextThemeProvider } from "next-themes";
+import { ThemeProvider } from "../components/ui/ThemeProvider";
 import { Bebas_Neue, Playfair_Display, Rubik } from "next/font/google";
 import "./globals.css";
 import HeaderMenu from "@/components/shared/Navbar/HeaderMenu";
@@ -35,12 +35,12 @@ export default function RootLayout({ children }) {
     <html lang='en' suppressHydrationWarning>
       <body
         className={`${rubik.variable}  ${playfairDisplay.variable} antialiased overflow-x-hidden`}>
-        <NextThemeProvider attribute='class' defaultTheme='system' enableSystem>
+        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <header>
             <HeaderMenu />
           </header>
           {children}
-        </NextThemeProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
